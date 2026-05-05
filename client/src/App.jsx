@@ -45,7 +45,7 @@ export default function App() {
           }
         />
 
-        {/* ✅ ADDED ROUTES */}
+        {/* ADDED ROUTES */}
         <Route
           path="/projects"
           element={

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "${import.meta.env.VITE_API_URL || "http://localhost:5000"}";
+
 export default function Login() {
   const [form, setForm] = useState({
     email: "",
     password: ""
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -16,9 +19,15 @@ export default function Login() {
   };
 
   const handleLogin = async () => {
+    if (!form.email || !form.password) {
+      alert("Please enter email and password");
+      return;
+    }
+
     try {
+      setLoading(true);
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL}/api/auth/login`,
         form
       );
 
@@ -28,14 +37,14 @@ export default function Login() {
         JSON.stringify(res.data.user)
       );
 
-      alert("Login successful");
-
       window.location.href = "/dashboard";
 
     } catch (error) {
       alert(
         error.response?.data?.message || "Login failed"
       );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,7 +56,6 @@ export default function Login() {
         <h1 className="text-5xl font-bold mb-6">
           Team Task Manager
         </h1>
-
         <p className="text-lg text-gray-300 leading-8">
           Manage projects, tasks, employees,
           and team productivity with a modern
@@ -62,7 +70,6 @@ export default function Login() {
           <h2 className="text-3xl font-bold mb-2">
             Welcome Back 👋
           </h2>
-
           <p className="text-gray-500 mb-8">
             Please login to continue
           </p>
@@ -85,13 +92,14 @@ export default function Login() {
 
           <button
             onClick={handleLogin}
-            className="bg-black text-white w-full p-3 rounded-xl hover:scale-105 transition"
+            disabled={loading}
+            className="bg-black text-white w-full p-3 rounded-xl hover:scale-105 transition disabled:opacity-50"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
 
           <p className="text-center mt-6 text-gray-600">
-            Don’t have an account?{" "}
+            Don't have an account?{" "}
             <Link
               to="/signup"
               className="font-semibold text-black"

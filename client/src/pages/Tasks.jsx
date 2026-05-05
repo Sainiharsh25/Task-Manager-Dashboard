@@ -15,7 +15,7 @@ export default function Tasks() {
   const fetchTasks = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/tasks"
+        "${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/tasks"
       );
       setTasks(res.data);
     } catch (error) {
@@ -37,7 +37,7 @@ export default function Tasks() {
   const handleCreateTask = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/tasks",
+        "${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/tasks",
         form
       );
 
