@@ -11,6 +11,19 @@ A full-stack team task management web application with role-based access control
 
 ---
 
+## 🔑 Test Credentials
+
+You can log in directly using the following demo account:
+
+| Field    | Value           |
+|----------|-----------------|
+| Email    | admin@gmail.com |
+| Password | admin123        |
+| Role     | Admin           |
+
+> Admin can create projects, manage members, assign tasks, and change roles.
+
+---
 
 ## ✨ Features
 
@@ -32,7 +45,7 @@ A full-stack team task management web application with role-based access control
 ### ✅ Task Management
 - Create tasks with title, description, priority, due date
 - Assign tasks to team members
-- Track status: `Todo` → `In Progress` → `In Review` → `Done`
+- Track status: Todo → In Progress → In Review → Done
 - Priority levels: Low, Medium, High, Critical
 - Overdue task detection
 - Comment on tasks
@@ -46,14 +59,13 @@ A full-stack team task management web application with role-based access control
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
+| Layer    | Technology               |
+|----------|--------------------------|
 | Frontend | React 18, Vite, React Router v6 |
-| Backend | Node.js, Express.js |
-| Database | MongoDB, Mongoose ODM |
-| Auth | JWT (JSON Web Tokens), bcryptjs |
-| Deployment | Railway |
-| Styling | Custom CSS with CSS Variables |
+| Backend  | Node.js, Express.js      |
+| Database | MongoDB, Mongoose ODM    |
+| Auth     | JWT, bcryptjs            |
+| Deployed | Railway                  |
 
 ---
 
@@ -87,7 +99,7 @@ Task-Manager-Dashboard/
 │   ├── package.json
 │   └── vite.config.js
 │
-└── README.md
+└── README.txt
 ```
 
 ---
@@ -151,37 +163,37 @@ http://localhost:5173
 ## 🔌 API Endpoints
 
 ### Auth
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login user |
-| GET | `/api/auth/me` | Get current user |
+| Method | Endpoint            | Description       |
+|--------|---------------------|-------------------|
+| POST   | /api/auth/register  | Register new user |
+| POST   | /api/auth/login     | Login user        |
+| GET    | /api/auth/me        | Get current user  |
 
 ### Projects
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/projects` | Get all user projects |
-| POST | `/api/projects` | Create new project |
-| GET | `/api/projects/:id` | Get project by ID |
-| PUT | `/api/projects/:id` | Update project (Admin) |
-| DELETE | `/api/projects/:id` | Delete project (Admin) |
-| POST | `/api/projects/:id/members` | Add member (Admin) |
-| DELETE | `/api/projects/:id/members/:userId` | Remove member (Admin) |
+| Method | Endpoint                            | Description            |
+|--------|-------------------------------------|------------------------|
+| GET    | /api/projects                       | Get all user projects  |
+| POST   | /api/projects                       | Create new project     |
+| GET    | /api/projects/:id                   | Get project by ID      |
+| PUT    | /api/projects/:id                   | Update project (Admin) |
+| DELETE | /api/projects/:id                   | Delete project (Admin) |
+| POST   | /api/projects/:id/members           | Add member (Admin)     |
+| DELETE | /api/projects/:id/members/:userId   | Remove member (Admin)  |
 
 ### Tasks
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/tasks?project=:id` | Get tasks for a project |
-| POST | `/api/tasks` | Create new task |
-| PUT | `/api/tasks/:id` | Update task |
-| DELETE | `/api/tasks/:id` | Delete task |
-| POST | `/api/tasks/:id/comments` | Add comment |
+| Method | Endpoint                  | Description              |
+|--------|---------------------------|--------------------------|
+| GET    | /api/tasks?project=:id    | Get tasks for a project  |
+| POST   | /api/tasks                | Create new task          |
+| PUT    | /api/tasks/:id            | Update task              |
+| DELETE | /api/tasks/:id            | Delete task              |
+| POST   | /api/tasks/:id/comments   | Add comment              |
 
 ---
 
 ## ☁️ Deployment (Railway)
 
-Both frontend and backend are deployed on [Railway](https://railway.app).
+Both frontend and backend are deployed on Railway (https://railway.app).
 
 ### Backend Environment Variables
 ```env
@@ -201,11 +213,11 @@ VITE_API_URL=https://devoted-comfort-production-b337.up.railway.app/
 
 ## 👤 Author
 
-**Harsh Saini**
+Harsh Saini
 - GitHub: https://github.com/Sainiharsh25
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT License.
