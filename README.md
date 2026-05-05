@@ -2,12 +2,6 @@
 
 A full-stack team task management web application with role-based access control (Admin/Member), built with React, Node.js, Express, and MongoDB.
 
-![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)
-![Node.js](https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js)
-![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?style=for-the-badge&logo=mongodb)
-![Railway](https://img.shields.io/badge/Deployed-Railway-purple?style=for-the-badge)
-
 ---
 
 ## 🌐 Live Demo
