@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function Tasks() {
   const [tasks, setTasks] = useState([]);
 
@@ -15,7 +17,7 @@ export default function Tasks() {
   const fetchTasks = async () => {
     try {
       const res = await axios.get(
-        "${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/tasks"
+        `${API_URL}/api/tasks`
       );
       setTasks(res.data);
     } catch (error) {
@@ -37,7 +39,7 @@ export default function Tasks() {
   const handleCreateTask = async () => {
     try {
       await axios.post(
-        "${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/tasks",
+        `${API_URL}/api/tasks`,
         form
       );
 
